@@ -1,7 +1,6 @@
 ## **🔄 Cấu trúc thư mục (Modular Architecture):**
 
 ```
-# Cấu trúc thư mục mới:
 # project/
 # ├── app/
 # │   ├── __init__.py
