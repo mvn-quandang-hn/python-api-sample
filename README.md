@@ -1,19 +1,50 @@
-1. Cấp trúc app:
-app/
-├── models/         # Database models
-│   ├── user.py
-│   └── item.py
-├── schemas/        # Pydantic schemas  
-│   ├── user.py
-│   └── item.py
-├── api/          # Database operations
-│   ├── user.py
-│   └── item.py
-└── routers/       # API endpoints
-    ├── users.py
-    └── items.py
+## **🔄 Cấu trúc thư mục (Modular Architecture):**
 
-🚀 **Cách sử dụng:**
+```
+# Cấu trúc thư mục mới:
+# project/
+# ├── app/
+# │   ├── __init__.py
+# │   ├── main.py
+# │   ├── database.py
+# │   ├── models/
+# │   │   ├── __init__.py
+# │   │   ├── user.py
+# │   │   └── item.py
+# │   ├── schemas/
+# │   │   ├── __init__.py
+# │   │   ├── user.py
+# │   │   └── item.py
+# │   ├── api/
+# │   │   ├── __init__.py
+# │   │   ├── user.py
+# │   │   └── item.py
+# │   └── routers/
+# │       ├── __init__.py
+# │       ├── users.py
+# │       └── items.py
+# ├── tests/
+# │   ├── __init__.py
+# │   ├── test_users.py
+# │   └── test_items.py
+# ├── requirements.txt
+# ├── Dockerfile
+# └── docker-compose.yml
+```
+
+## **🧪 Unit Tests hoàn chỉnh:**
+
+### **Test coverage:**
+
+- `tests/test_users.py` - 8 test cases cho users
+- `tests/test_items.py` - 15+ test cases cho items
+- Bao gồm: CRUD, validation, search, pagination, error cases
+
+## **🚀 Cách sử dụng:**
+
+bash
+
+```bash
 # 1. Start services
 docker-compose up --build
 
@@ -26,8 +57,13 @@ docker-compose up --build
 pytest tests/ -v                # Tất cả tests
 pytest tests/test_users.py -v   # Chỉ user tests  
 pytest tests/test_items.py -v   # Chỉ item tests
+```
 
-📝 **Ví dụ sử dụng:**
+## **📝 Ví dụ sử dụng:**
+
+json
+
+```json
 // Tạo item mới
 POST /items/
 {
@@ -42,3 +78,4 @@ GET /items/?name=iPhone
 
 // Low stock items
 GET /items/low-stock?threshold=10
+```
